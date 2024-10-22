@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css"> <!-- Nếu bạn sử dụng tệp CSS -->
+    <title>PWA Example</title>
+</head>
+<body>
+    <h1>Chào mừng đến với PWA của tôi!</h1>
+    <p>Đây là một ứng dụng web tĩnh đơn giản.</p>
+    
+    <h2>Nội dung văn bản mẫu:</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, 
+        vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, 
+        ultrices nec congue eget, auctor vitae massa. 
+    </p>
+    <p>
+        Fusce luctus vestibulum augue ut aliquet. Nunc sagittis, 
+        purus sit amet fermentum dictum, nisi erat porttitor ligula, eget lacinia 
+        odio sem nec elit. Cras pulvinar, mi non interdum dignissim, risus est 
+        scelerisque sapien, a sollicitudin elit mi in purus.
+    </p>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered: ', registration);
+                    })
+                    .catch(error => {
+                        console.error('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
